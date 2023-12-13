@@ -5,7 +5,7 @@
 ### Passo a passo para executar o aplicação 
 ### Dentro do LINUX ou WSL
 ```
-git clone --branch dockertest https://github.com/MurilodioPy/controle-de-emprestimo-de-chaves.git
+git clone https://github.com/MurilodioPy/Flask-WebSite.git
 ```
 ### Entrar na pasta do projeto
 ```
