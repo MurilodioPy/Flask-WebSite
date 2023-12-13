@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1 class="titulo_pagina">SERVIDORES</h1>
+    <nav>
+    <ul>
+        <li><a href="{{ url_for('servidor.create_get') }}">Inserir Servidor</a></li>
+        <li><a href="{{ url_for('servidor.update_get') }}">Atualizar Servidor</a></li>
+        <li><a href="{{ url_for('servidor.delete_get') }}">Deletar Servidor</a></li>
+    </ul>
+    </nav>
+    <div class="mostrarItens">
+        <ul>
+            {% for servidor in servidores %}
+                <li>{{ servidor.id }} - {{ servidor.nome }} - {{ servidor.cpf }} - {{ servidor.contato }} - {{ servidor.nascimento }} - {{ servidor.status }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

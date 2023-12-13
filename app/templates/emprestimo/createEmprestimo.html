@@ -1,0 +1,20 @@
+{% extends "index.html" %} {% block content %}
+<h1>Criar Empréstimo</h1>
+<form method="post" action="{{ url_for('emprestimo.inserir_emprestimo') }}">
+  <label for="chave_id">Chave ID:</label>
+  <select id="chave_id" name="chave_id" required>
+    {% for chave in chaves_disponiveis %}
+      <option value="{{ chave.id }}">{{ chave.nome }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="servidor_retirou_id">Servidor:</label>
+  <select id="servidor_retirou_id" name="servidor_retirou_id" required>
+    {% for servidor in servidores %}
+      <option value="{{ servidor.id }}">{{ servidor.nome }}</option>
+    {% endfor %}
+  </select>
+
+  <input type="submit" value="Criar" />
+</form>
+{% endblock %}

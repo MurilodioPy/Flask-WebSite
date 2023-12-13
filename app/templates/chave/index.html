@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1 class="titulo_pagina">CHAVES</h1>
+    <nav>
+    <ul>
+        <li><a href="{{ url_for('chave.create_get') }}">Criar Chave</a></li>
+        <li><a href="{{ url_for('chave.readKey_get') }}">Buscar Chave</a></li>
+        <li><a href="{{ url_for('chave.update_get') }}">Atualizar Chave</a></li>
+        <li><a href="{{ url_for('chave.delete_get') }}">Deletar Chave</a></li>
+    </ul>
+    </nav>
+    <div class="mostrarItens">
+        <ul>
+            {% for chave in chaves %}
+                <li>{{ chave.id }} - {{ chave.nome }} - {{ chave.status }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
