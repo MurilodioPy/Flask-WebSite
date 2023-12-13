@@ -65,6 +65,7 @@ localhost:8080
 ### Chaves
 
 - Listar chaves
+- Buscar chave
 - Inserir nova chave
 - Atualizar chave
 - Deletar chave
@@ -90,9 +91,14 @@ localhost:8080
 ## Configuração do MySQL
 
 - URI de conexão com o MySQL
-
+- Criação automática de tabelas 
 
 ## Jinja2
 
 - Templates com Jinja2
+
+## Docker
+
+- Configuração do docker-compose.yml
+- Configuração do Dockerfile
 
