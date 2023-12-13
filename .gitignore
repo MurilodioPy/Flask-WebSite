@@ -1,0 +1,6 @@
+manager/
+venv/
+env/
+app/mysql_data/*
+migrations/
+manager/
