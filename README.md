@@ -9,7 +9,7 @@ git clone https://github.com/MurilodioPy/Flask-WebSite.git
 ```
 ### Entrar na pasta do projeto
 ```
-cd controle-de-emprestimo-de-chaves/
+cd Flask-WebSite/
 ```
 ### Dentro da pasta do projeto
 ### Instale o docker
