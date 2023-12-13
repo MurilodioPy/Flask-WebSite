@@ -2,17 +2,17 @@
 # Projeto desenvolvido em flask/python-mysql em container docker
 ## Projeto Flask - Controle de empréstimo de chaves
 
-## Passo a passo para executar o aplicação 
-## Dentro do LINUX ou WSL
+### Passo a passo para executar o aplicação 
+### Dentro do LINUX ou WSL
 ```
 git clone --branch dockertest https://github.com/MurilodioPy/controle-de-emprestimo-de-chaves.git
 ```
-## Entrar na pasta do projeto
+### Entrar na pasta do projeto
 ```
 cd controle-de-emprestimo-de-chaves/
 ```
-## Dentro da pasta do projeto
-## Instale o docker
+### Dentro da pasta do projeto
+### Instale o docker
 ```
 sudo apt update 
 ```
@@ -22,20 +22,20 @@ sudo pip install docker
 ```
 sudo apt install docker-ce docker-ce-cli containerd.io 
 ```
-## Inicie o docker
+### Inicie o docker
 ```
 sudo service docker start
 ```
-## Inicie a aplicalação
+### Inicie a aplicalação
 ```
 sudo docker compose up --build 
 ```
-## Abra o browser 
+### Abra o browser 
 ```
 localhost:8080
 ```
 
-## Estrutura do Projeto
+### Estrutura do Projeto
 - `app/`: Pasta principal do aplicativo
   - `__init__.py`: Configuração do aplicativo Flask
   - `database.py`: Configuração do banco de dados SQLAlchemy
@@ -45,7 +45,7 @@ localhost:8080
     - `emprestimo.py`: Visões relacionadas aos empréstimos
     - `aplicativo.py`: Visões gerais do aplicativo
 
-## Configuração do Flask
+### Configuração do Flask
 
 - `create_app()`: Função para criar uma instância do aplicativo Flask
 - Configurações do banco de dados
@@ -53,14 +53,14 @@ localhost:8080
   - `SQLALCHEMY_TRACK_MODIFICATIONS`: Configuração para rastrear modificações
   - `SQLALCHEMY_ECHO`: Ativa a saída de depuração para consultas SQL
 
-## Blueprints
+### Blueprints
 
 - `chave_bp`: Blueprint para visões relacionadas a chaves
 - `servidor_bp`: Blueprint para visões relacionadas a servidores
 - `emprestimo_bp`: Blueprint para visões relacionadas a empréstimos
 - `aplicativo_bp`: Blueprint para visões gerais do aplicativo
 
-## Rotas e Visões
+### Rotas e Visões
 
 ### Chaves
 
