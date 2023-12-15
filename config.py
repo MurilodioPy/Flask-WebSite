@@ -1,0 +1,5 @@
+
+SECRET_KEY = 'testkey'
+SQLALCHEMY_DATABASE_URI = 'mysql://pjflask:Pjflask1@mysql:3306/pjflask'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_ECHO = True
