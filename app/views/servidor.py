@@ -12,16 +12,16 @@ def index():
     servidores = Servidor.query.all()
     return render_template('servidor/index.html', servidores=servidores)
 
-@servidor_bp.route('/create', methods=['GET'])
+@servidor_bp.route('/create')
 def create_get():
     return render_template('servidor/createServidor.html')
 
-@servidor_bp.route('/update', methods=['GET'])
+@servidor_bp.route('/update')
 def update_get():
     servidores = Servidor.query.all()
     return render_template('servidor/updateServidor.html', servidores=servidores)
 
-@servidor_bp.route('/delete', methods=['GET'])
+@servidor_bp.route('/delete')
 def delete_get():
     servidores = Servidor.query.all()
     return render_template('servidor/deleteServidor.html', servidores=servidores)

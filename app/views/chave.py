@@ -9,25 +9,25 @@ def index():
     chaves = Chave.query.all()
     return render_template('chave/index.html', chaves=chaves)
 
-@chave_bp.route('/create', methods=['GET'])
+@chave_bp.route('/create')
 def create_get():
     return render_template('chave/createChave.html')
 
-@chave_bp.route('/read', methods=['GET'])
+@chave_bp.route('/read')
 def readKey_get():
     return render_template('chave/buscarChave.html')
 
-@chave_bp.route('/update', methods=['GET'])
+@chave_bp.route('/update')
 def update_get():
     chaves = Chave.query.all()
     return render_template('chave/updateChave.html', chaves=chaves)
 
-@chave_bp.route('/delete', methods=['GET'])
+@chave_bp.route('/delete')
 def delete_get():
     chaves = Chave.query.filter_by(status='disponivel').all()
     return render_template('chave/deleteChave.html', chaves=chaves)
 
-@chave_bp.route('/readRequest', methods=['POST', 'GET'])
+@chave_bp.route('/readRequest', methods=['POST'])
 def buscar_chave():
     if request.method == 'POST':
         nome_str = request.form.get('nome')
@@ -85,7 +85,7 @@ def atualizar_status_chave(chave_id):
             else:
                 chave.status = 'disponivel'
             db.session.commit()
-            
+# Verificar o status a chave
 def status_chave(chave_id):
     chave = Chave.query.get(chave_id)
     if chave:

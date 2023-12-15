@@ -11,19 +11,19 @@ def index():
     emprestimos_ativos = Emprestimo.query.filter_by(status='Ativo').all()
     return render_template('emprestimo/index.html', emprestimos_ativos=emprestimos_ativos)
 
-@emprestimo_bp.route('/emprestimo', methods=['GET'])
+@emprestimo_bp.route('/emprestimo')
 def create_get():
     chaves_disponiveis = Chave.query.filter_by(status='disponivel').all()
     servidores = Servidor.query.all()
     return render_template('emprestimo/createEmprestimo.html', chaves_disponiveis=chaves_disponiveis, servidores=servidores)
 
-@emprestimo_bp.route('/devolucao', methods=['GET'])
+@emprestimo_bp.route('/devolucao')
 def create_devolucao_get():
     chaves_indisponiveis = Chave.query.filter_by(status='indisponivel').all()
     servidores = Servidor.query.all()
     return render_template('emprestimo/devolucaoEmprestimo.html', chaves_indisponiveis=chaves_indisponiveis, servidores=servidores)
 
-@emprestimo_bp.route('/delete', methods=['GET'])
+@emprestimo_bp.route('/delete')
 def delete_get():
     emprestimos_inativos = Emprestimo.query.filter_by(status='Inativo').all()
     return render_template('emprestimo/deleteEmprestimo.html', emprestimos_inativos = emprestimos_inativos)
@@ -102,7 +102,7 @@ def deletar_emprestimo():
     return redirect(url_for('emprestimo.mostrar_emprestimos_inativos'))
 
 
-@emprestimo_bp.route('/readInativos', methods=['GET'])
+@emprestimo_bp.route('/readInativos')
 def mostrar_emprestimos_inativos():
     emprestimos_inativos = Emprestimo.query.filter_by(status='Inativo').all()
     return render_template('emprestimo/mostrarEmprestimos_inativos.html', emprestimos_inativos=emprestimos_inativos)

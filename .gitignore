@@ -4,5 +4,5 @@ env/
 app/mysql_data/*
 migrations/
 manager/
-*.pyc
 __pycache__/
+*.pyc

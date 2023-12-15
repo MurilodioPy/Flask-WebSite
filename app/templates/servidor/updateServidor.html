@@ -4,7 +4,7 @@
   <label for="id">ID:</label>
   <select id="id" name="id" required>
     {% for servidor in servidores %}
-    <option value="{{ servidor.id }}">{{ servidor.nome }}</option>
+      <option value="{{ servidor.id }}">{{ servidor.nome }}</option>
     {% endfor %}
   </select>
 
@@ -19,8 +19,7 @@
     type="date"
     id="nascimento"
     name="nascimento"
-    pattern="\d{4}-\d{2}-\d{2}"
-    required
+    pattern="\d{2}-\d{2}-\d{4}"
   />
   <input type="submit" value="Atualizar" />
 </form>
