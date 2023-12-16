@@ -9,23 +9,28 @@ def index():
     chaves = Chave.query.all()
     return render_template('chave/index.html', chaves=chaves)
 
+
 @chave_bp.route('/create')
 def create_get():
     return render_template('chave/createChave.html')
 
+
 @chave_bp.route('/read')
 def readKey_get():
     return render_template('chave/buscarChave.html')
+
 
 @chave_bp.route('/update')
 def update_get():
     chaves = Chave.query.all()
     return render_template('chave/updateChave.html', chaves=chaves)
 
+
 @chave_bp.route('/delete')
 def delete_get():
     chaves = Chave.query.filter_by(status='disponivel').all()
     return render_template('chave/deleteChave.html', chaves=chaves)
+
 
 @chave_bp.route('/readRequest', methods=['POST'])
 def buscar_chave():
@@ -34,6 +39,7 @@ def buscar_chave():
         if nome_str:
             chaves = Chave.query.filter(Chave.nome.ilike(f'%{nome_str}%')).all()
     return render_template('chave/buscarChave.html', chaves=chaves)
+
 
 # Rota para inserir uma nova chave
 @chave_bp.route('/createRequest', methods=['POST'])
@@ -47,6 +53,7 @@ def inserir_chave():
     flash("Chave inserida com sucesso")
     return redirect(url_for('chave.index'))
 
+
 # Rota para deletar uma chave
 @chave_bp.route('/deleteRequest', methods=['POST'])
 def deletar_chave():
@@ -58,6 +65,7 @@ def deletar_chave():
             db.session.commit()
     flash("Chave deletada com sucesso")
     return redirect(url_for('chave.index'))
+
 
 # Rota para atualizar uma chave
 @chave_bp.route('/updateRequest', methods=['POST'])
@@ -85,6 +93,8 @@ def atualizar_status_chave(chave_id):
             else:
                 chave.status = 'disponivel'
             db.session.commit()
+            
+            
 # Verificar o status a chave
 def status_chave(chave_id):
     chave = Chave.query.get(chave_id)

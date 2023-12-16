@@ -1,8 +1,10 @@
+*.pyc
 manager/
 venv/
 env/
 app/mysql_data/*
 migrations/
 manager/
-__pycache__/
-*.pyc
+# __pycache__/
+# app/views/__pycache__/
+

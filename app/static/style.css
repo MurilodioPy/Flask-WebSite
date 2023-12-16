@@ -4,8 +4,8 @@
 :root {
   --cor-primaria: #52a35f;
   --cor-secundaria: #ff4f5a;
-  --cor-tercearia: #333;
-  --cor-fundo: #222;
+  --cor-tercearia: #343a41;
+  --cor-fundo: #212a35;
   --cor-texto: #fff;
 }
 
@@ -16,13 +16,11 @@
   list-style: none;
   border: 0;
   box-sizing: border-box;
-  background-color: #222;
   color: var(--cor-texto);
 }
 
 body {
   text-align: center;
-  align-items: center;
   font-family: "Montserrat", Helvetica, sans-serif;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
@@ -32,7 +30,7 @@ body {
 
 nav > ul > li {
   text-align: left;
-  padding: 3px;
+  padding: 7px;
   text-transform: uppercase;
 }
 
@@ -41,13 +39,27 @@ nav > ul > li > a {
   background-color: var(--cor-primaria);
   padding: 2px;
   border-radius: 3px;
+  border: var(--cor-texto) solid 1px;
 }
 
 .nav-bar {
+  border-bottom: solid var(--cor-primaria) 1px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-bottom: 5px;
+}
+
+.nav-bar > a{
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+.nav-bar-img{
+  max-width: 60%;
 }
 
 .navegador {
@@ -58,11 +70,12 @@ nav > ul > li > a {
 }
 
 .itens_nav {
-  padding: 10px;
+  padding: 2px;
 }
 
 .container {
-  max-width: 800px;
+  background-color: var(--cor-tercearia);
+  max-width: 70%;
   margin: 50px auto;
   text-align: left;
   border: #52a35f solid 1px;
@@ -72,6 +85,11 @@ nav > ul > li > a {
 
 .container-img{
   text-align: center;
+}
+
+.container-img > img{
+  width: 100%;
+  border-radius: 10px;
 }
 
 .mostrarItens {

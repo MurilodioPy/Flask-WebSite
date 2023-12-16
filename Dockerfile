@@ -16,9 +16,6 @@ COPY requirements.txt requirements.txt
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
-COPY ./run.py .
-COPY ./app /app
-
 # Copie o script de inicialização para o diretório do docker-entrypoint-initdb.d/
 ADD ./dump/init.sql /docker-entrypoint-initdb.d
 

@@ -1,12 +1,16 @@
 {% extends "index.html" %} {% block content %}
 <h1>Deletar Empréstimo</h1>
-<form method="post" action="{{ url_for('emprestimo.deletar_emprestimo') }}">
-  <label for="id">ID do Empréstimo:</label>
-  <select id="id" name="id" required>
-    {% for emprestimo in emprestimos_inativos %}
-    <option value="{{ emprestimo.id }}">{{ emprestimo.datahora_devolucao }}</option>
-    {% endfor %}
-  </select>
-  <input type="submit" value="Deletar" />
-</form>
+<div>
+  <form method="post" action="{{ url_for('emprestimo.deletar_emprestimo') }}">
+    <label for="id">ID do Empréstimo:</label>
+    <select id="id" name="id" required>
+      {% for emprestimo in emprestimos_inativos %}
+      <option value="{{ emprestimo.id }}">{{ emprestimo.datahora_devolucao }}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" value="Deletar" />
+  </form>
+  <button type="submit" method="post" action="{{ url_for('emprestimo.deletar_todos_emprestimo') }}">Deletar todos</button>
+</div>
+
 {% endblock %}
