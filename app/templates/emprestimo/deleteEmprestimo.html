@@ -8,9 +8,11 @@
       <option value="{{ emprestimo.id }}">{{ emprestimo.datahora_devolucao }}</option>
       {% endfor %}
     </select>
-    <input type="submit" value="Deletar" />
+    <input class="btn" type="submit" value="Deletar" />
   </form>
-  <button type="submit" method="post" action="{{ url_for('emprestimo.deletar_todos_emprestimo') }}">Deletar todos</button>
+  <form action="{{ url_for('emprestimo.deletar_todos_emprestimo') }}" method="post">
+    <button class="btn" type="submit">Deletar todos</button>
+  </form>
 </div>
 
 {% endblock %}

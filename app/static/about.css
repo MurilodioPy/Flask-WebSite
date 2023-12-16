@@ -1,0 +1,54 @@
+@import url("style.css");
+
+.container {
+    background-color: var(--cor-tercearia);
+    max-width: 70%;
+    margin: 50px auto;
+    border: #52a35f solid 1px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+p {
+    color: var(--cor-primaria);
+    font-size: 18px;
+    line-height: 2;
+}
+
+span {
+    font-weight: bold;
+}
+
+.tecnologias {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn_voltar {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.btn_voltar:hover {
+    opacity: 1;
+  }

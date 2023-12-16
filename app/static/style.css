@@ -55,7 +55,7 @@ nav > ul > li > a {
 .nav-bar > a{
   display: flex;
   justify-content: center;
-  width: 15%;
+  width: 70%;
 }
 
 .nav-bar-img{
@@ -111,6 +111,7 @@ h1 {
   text-align: left;
 }
 
+button,
 input,
 select {
   width: 100%;
@@ -133,17 +134,23 @@ select {
   background-repeat: no-repeat;
 }
 
-input[type="submit"] {
+.btn, .btn_voltar {
   padding: 10px;
   background-color: var(--cor-secundaria);
   color: var(--cor-texto);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 
-input[type="submit"] :hover {
-  background-color: var(--cor-secundaria);
+input[type="submit"].btn:hover {
+  opacity: 1;
+}
+
+.btn:hover {
+  opacity: 1;
 }
 
 .footer-pag {

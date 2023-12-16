@@ -111,7 +111,7 @@ def deletar_emprestimo():
 def deletar_todos_emprestimo():
     if request.method == 'POST':
         Emprestimo.query.filter_by(status="Inativo").delete()
-        
+
         db.session.commit()
     flash("Empréstimos deletados com sucesso!")
     return redirect(url_for('emprestimo.mostrar_emprestimos_inativos'))

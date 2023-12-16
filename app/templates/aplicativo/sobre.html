@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}" />
+    <title>Sobre o projeto</title>
+</head>
+
+<body>
+    <h1>Controle de Empréstimo de Chaves - Projeto PyKeyLoan</h1>
+    <div class="container">
+
+        <p>
+            O <span>PyKeyLoan</span> é um projeto desenvolvido para simplificar e organizar o controle de empréstimo de
+            chaves em diversos
+            ambientes. Com uma abordagem eficiente e intuitiva, o sistema permite que usuários registrem empréstimos,
+            devoluções
+            e consultem o status de chaves de forma centralizada.
+        </p>
+
+        <h2>Tecnologias Utilizadas:</h2>
+
+        <p>
+            <span>Flask:</span>  O <span>PyKeyLoan</span> utiliza o framework web Flask, construído em Python. Flask é conhecido por
+            sua
+            simplicidade e
+            flexibilidade, proporcionando um ambiente de desenvolvimento ágil e eficaz.
+        </p>
+
+        <p>
+            <span>Python:</span> A linguagem de programação principal do projeto é o Python. Com uma sintaxe clara e poderosa, Python
+            é
+            ideal
+            para o desenvolvimento web e integração com bancos de dados.
+        </p>
+
+        <p>
+            <span>MySQL:</span> Para armazenamento de dados, o <span>PyKeyLoan</span> utiliza o MySQL, um sistema de gerenciamento de
+            banco de dados
+            relacional. O MySQL oferece confiabilidade e desempenho para manipulação eficaz dos dados do projeto.
+        </p>
+
+        <p>
+            <span>CSS (Cascading Style Sheets):</span> A camada de apresentação do <span>PyKeyLoan</span> é estilizada utilizando
+            CSS,
+            proporcionando uma
+            interface de usuário atraente e responsiva. O design é pensado para facilitar a usabilidade e tornar a
+            experiência
+            do usuário mais agradável.
+        </p>
+
+        <p>
+            <span>Docker:</span> O <span>PyKeyLoan</span> é empacotado e distribuído usando contêineres Docker. Isso simplifica a
+            implantação do sistema
+            em diferentes ambientes, garantindo consistência e facilitando a manutenção.
+        </p>
+
+        <h2>Funcionalidades Principais:</h2>
+
+        <p>
+            <span>Registro de Empréstimos:</span> Usuários podem registrar empréstimos de chaves, incluindo informações como data,
+            responsável pelo empréstimo e chave específica.
+        </p>
+
+        <p>
+            <span>Consulta de Status:</span> O sistema permite a consulta rápida do status de uma chave, indicando se está
+            disponível,
+            emprestada ou reservada.
+        </p>
+
+        <p>
+            <span>Devolução Simples:</span> A devolução de chaves é simplificada, com a opção de registrar qualquer dano ou
+            observação
+            relevante.
+        </p>
+
+        <p>
+            <span>Histórico de Transações:</span> Um histórico detalhado de todas as transações, incluindo empréstimos e devoluções,
+            é
+            mantido para referência futura.
+        </p>
+    </div>
+</body>
+
+<form action="{{ url_for('aplicativo.index') }}">
+    <button class="btn_voltar" type="submit">Tela Principal</button>
+</form>
+
+</html>
