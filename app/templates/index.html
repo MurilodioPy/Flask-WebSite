@@ -15,7 +15,8 @@
     <header>
       <h1>CHAVEIRO</h1>
       <nav class="nav-bar">
-        <a href="{{ url_for('aplicativo.index') }}" > <img class="nav-bar-img" src="{{ url_for('static', filename='logo.png') }}" alt="logo"></a>
+        <a class="nav-bar-img" href="{{ url_for('aplicativo.index') }}" > 
+        <img class="nav-bar-img" src="{{ url_for('static', filename='logo.png') }}" alt="logo"></a>
         <ul class="navegador">
           <li class="itens_nav">
             <a href="{{ url_for('chave.index') }}">CHAVES</a>
