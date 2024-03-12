@@ -59,7 +59,11 @@ nav > ul > li > a {
 }
 
 .nav-bar-img{
+<<<<<<< HEAD
   max-width: 30%;
+=======
+  max-width: 25%;
+>>>>>>> 80bb1c1ce1a27235edffa17b78577430fcac00f3
 }
 
 .navegador {
