@@ -1,7 +1,7 @@
 {% extends "index.html" %} {% block content %}
 <h1>Criar Empréstimo</h1>
 <form method="post" action="{{ url_for('emprestimo.inserir_emprestimo') }}">
-  <label for="chave_id">Chave ID:</label>
+  <label for="chave_id">Chave:</label>
   <select id="chave_id" name="chave_id" required>
     {% for chave in chaves_disponiveis %}
       <option value="{{ chave.id }}">{{ chave.nome }}</option>
@@ -15,6 +15,6 @@
     {% endfor %}
   </select>
 
-  <input class="btn" type="submit" value="Criar" />
+  <input class="btn" type="submit" value="Emprestar" />
 </form>
 {% endblock %}

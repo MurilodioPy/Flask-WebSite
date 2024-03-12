@@ -1,7 +1,7 @@
 {% extends "index.html" %} {% block content %}
 <h1>Atualizar Servidor</h1>
 <form method="post" action="{{ url_for('servidor.atualizar_servidor') }}">
-  <label for="id">ID:</label>
+  <label for="id">Servidor:</label>
   <select id="id" name="id" required>
     {% for servidor in servidores %}
       <option value="{{ servidor.id }}">{{ servidor.nome }}</option>

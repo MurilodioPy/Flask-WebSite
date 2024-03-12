@@ -2,7 +2,7 @@
 <h1>Devolver Chaves</h1>
 <form method="post" action="{{ url_for('emprestimo.devolver_emprestimo') }}">
 
-  <label for="chave_id">Chave ID:</label>
+  <label for="chave_id">Chave:</label>
   <select id="chave_id" name="chave_id" required>
     {% for chave in chaves_indisponiveis %}
       <option value="{{ chave.id }}">{{ chave.nome }}</option>

@@ -2,7 +2,7 @@
 {% extends "index.html" %} {% block content %}
 <h1>Atualizar chaves</h1>
 <form method="post" action="{{ url_for('chave.atualizar_chave') }}">
-  <label for="id">ID:</label>
+  <label for="id">Chave:</label>
   <select id="id" name="id" required>
     {% for chave in chaves %}
     <option value="{{ chave.id }}">{{ chave.nome }}</option>

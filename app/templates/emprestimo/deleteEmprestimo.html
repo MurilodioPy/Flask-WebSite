@@ -2,7 +2,7 @@
 <h1>Deletar Empréstimo</h1>
 <div>
   <form method="post" action="{{ url_for('emprestimo.deletar_emprestimo') }}">
-    <label for="id">ID do Empréstimo:</label>
+    <label for="id">Empréstimos Inativos:</label>
     <select id="id" name="id" required>
       {% for emprestimo in emprestimos_inativos %}
       <option value="{{ emprestimo.id }}">{{ emprestimo.datahora_devolucao }}</option>
