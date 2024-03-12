@@ -13,6 +13,7 @@ class Servidor(db.Model):
    __tablename__ = 'servidores'
    id = db.Column(db.Integer, primary_key=True)
    nome = db.Column(db.String(255), nullable=False)
+   sobrenome = db.Column(db.String(255), nullable=False)
    cpf = db.Column(db.String(255), unique=True, nullable=False)
    contato = db.Column(db.String(255))
    nascimento = db.Column(Date)
@@ -21,7 +22,7 @@ class Servidor(db.Model):
 class Emprestimo(db.Model):
    __tablename__ = 'emprestimos'
    id = db.Column(db.Integer, primary_key=True)
-   datahora_emprestimo = db.Column(db.DateTime, default=datetime.utcnow())
+   datahora_emprestimo = db.Column(db.DateTime, default=datetime.now())
    datahora_devolucao = db.Column(db.DateTime)
    status = db.Column(db.String(255), default='Ativo')
    chave_id = db.Column(db.Integer, db.ForeignKey('chaves.id'))

@@ -30,6 +30,7 @@ def delete_get():
 @servidor_bp.route('/createRequest', methods=['POST'])
 def inserir_servidor():
     nome = request.form.get('nome')
+    sobrenome = request.form.get('sobrenome')
     cpf = request.form.get('cpf')
     contato = request.form.get('contato')
     nascimento_str = request.form.get('nascimento')
@@ -40,6 +41,7 @@ def inserir_servidor():
             # Criar um novo objeto Servidor e adicioná-lo ao banco de dados
             novo_servidor = Servidor(
                 nome=nome,
+                sobrenome=sobrenome,
                 cpf=cpf,
                 contato=contato,
                 nascimento=nascimento,
@@ -84,6 +86,8 @@ def atualizar_servidor():
             if servidor.status == "Sem Pendencia":
                 if nome := request.form.get('nome'):
                     servidor.nome = nome
+                if sobrenome := request.form.get('sobrenome'):
+                    servidor.nome = sobrenome
                 if cpf := request.form.get('cpf'):
                     servidor.cpf = cpf
                 if contato := request.form.get('contato'):

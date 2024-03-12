@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS chaves (
 CREATE TABLE IF NOT EXISTS servidores (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
+    sobrenome VARCHAR(255) NOT NULL,
     cpf VARCHAR(255) UNIQUE NOT NULL,
     contato VARCHAR(255),
     nascimento DATE,

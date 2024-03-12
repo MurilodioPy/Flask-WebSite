@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-import pytz
 from ..models import Emprestimo, Chave, Servidor
 from ..database import db
 from .chave import atualizar_status_chave, status_chave
@@ -39,25 +38,29 @@ def inserir_emprestimo():
         # Obter dados do formulário
         chave_id = request.form.get('chave_id')
         if status_chave(chave_id):
-            servidor_retirou_id = request.form.get('servidor_retirou_id')
+            try:
+                servidor_retirou_id = request.form.get('servidor_retirou_id')
             
-            if servidor_retirou_id:
-                servidor = Servidor.query.get(servidor_retirou_id)
-                if servidor:
-                    servidor.status = "Com Pendencia"
+                if servidor_retirou_id:
+                    servidor = Servidor.query.get(servidor_retirou_id)
+                    if servidor:
+                        servidor.status = "Com Pendencia"
             
-            novo_emprestimo = Emprestimo(
-                datahora_emprestimo = datetime.utcnow(),
-                status="Ativo",
-                chave_id=chave_id,
-                servidor_retirou_id=servidor_retirou_id,
-            )
-            
-            atualizar_status_chave(chave_id)
+                novo_emprestimo = Emprestimo(
+                    datahora_emprestimo = datetime.now(),
+                    status="Ativo",
+                    chave_id=chave_id,
+                    servidor_retirou_id=servidor_retirou_id,
+                )
+                
+                atualizar_status_chave(chave_id)
 
-            db.session.add(novo_emprestimo)
-            db.session.commit()
-        flash("Empréstimo feito com sucesso!")
+                db.session.add(novo_emprestimo)
+                db.session.commit()
+                flash("Empréstimo feito com sucesso!")
+            except Exception as e:
+                print(f"Erro ao inserir no banco de dados: {e}")
+                db.session.rollback()
         return redirect(url_for('emprestimo.index'))
         
 
@@ -70,7 +73,7 @@ def devolver_emprestimo():
             try:
                 emprestimo = Emprestimo.query.filter_by(chave_id=chave_id, status="Ativo").first()
                 if emprestimo:
-                    emprestimo.datahora_devolucao = datetime.utcnow()
+                    emprestimo.datahora_devolucao = datetime.now()
                     emprestimo.status = "Inativo"
                     
                 servidor_devolveu_id = request.form.get('servidor_devolveu_id')
