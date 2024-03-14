@@ -10,9 +10,9 @@
     </ul>
     </nav>
     <div class="mostrarItens">
-        <ul>
+        <ul class="card-itens">
             {% for chave in chaves %}
-                <li>{{ chave.id }} - {{ chave.nome }} - {{ chave.status }}</li>
+                <li class="card-item">{{ chave.id }} - {{ chave.nome }} - {{ chave.status }}</li>
             {% endfor %}
         </ul>
     </div>

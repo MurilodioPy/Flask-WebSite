@@ -98,6 +98,20 @@ nav > ul > li > a {
   text-transform: uppercase;
 }
 
+.card-item{
+  border: var(--cor-primaria) solid 1px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.card-itens{
+  display: grid;
+  grid-template-areas: "1 2 3";
+  grid-auto-columns: 33%;
+  justify-items: stretch;
+  align-content: stretch;
+}
+
 .mostrarItens > ul > li {
   padding: 5px;
 }

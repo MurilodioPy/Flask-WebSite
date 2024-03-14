@@ -1,9 +1,9 @@
 {% extends "index.html" %}
 {% block content %}
   <h1>Servidores</h1>
-  <ul>
-  {% for servidor in servidores %}
-      <li>{{ servidor.id }} - {{ servidor.nome }} - {{ servidor.sobrenome }} - {{ servidor.cpf }} - {{ servidor.contato }} - {{ servidor.nascimento }} - {{ servidor.status }}</li>
-  {% endfor %}
+  <ul class="card-itens">
+    {% for servidor in servidores %}
+        <li class="card-item">{{ servidor.id }} - {{ servidor.nome }} - {{ servidor.sobrenome }} - {{ servidor.cpf }} - {{ servidor.contato }} - {{ servidor.nascimento }} - {{ servidor.status }}</li>
+    {% endfor %}
   </ul>
 {% endblock %}

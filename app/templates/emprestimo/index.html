@@ -11,9 +11,9 @@
     </nav>
 
     <div class="mostrarItens">
-        <ul>
+        <ul class="card-itens">
             {% for emprestimo in emprestimos_ativos %}
-                <li>
+                <li class="card-item">
                     ID: {{ emprestimo.id }}<br>
                     Data e Hora do Empréstimo: {{ emprestimo.datahora_emprestimo }}<br>
                     Data e Hora da Devolução: {{ emprestimo.datahora_devolucao }}<br>

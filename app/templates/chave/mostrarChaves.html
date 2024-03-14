@@ -2,9 +2,9 @@
 {% extends "index.html" %}
 {% block content %}
   <h1>Chaves</h1>
-  <ul>
-  {% for chave in chaves %}
-      <li>{{ chave.id }} - {{ chave.nome }} - {{ chave.status }}</li>
-  {% endfor %}
+  <ul class="card-itens">
+    {% for chave in chaves %}
+        <li class="card-item">{{ chave.id }} - {{ chave.nome }} - {{ chave.status }}</li>
+    {% endfor %}
   </ul>
 {% endblock %}
